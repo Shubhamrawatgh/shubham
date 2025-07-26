@@ -24,6 +24,48 @@
         .page-header .back-link:hover {
             color: var(--accent-color);
         }
+
+        /* --- NEW AI-THEMED HOVER EFFECT --- */
+        .ai-project-grid .project-card {
+            position: relative; /* Needed for the pseudo-element */
+            overflow: hidden; /* Keeps the gradient contained */
+        }
+
+        .ai-project-grid .project-card::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200%; /* Make it large enough to cover the card when rotated */
+            height: 200%;
+            background: conic-gradient(
+                from 0deg,
+                transparent 0%,
+                transparent 70%,
+                var(--accent-color) 95%,
+                transparent 100%
+            );
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            animation: rotate 4s linear infinite;
+            z-index: -1; /* Place it behind the card content */
+        }
+
+        .ai-project-grid .project-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+        /* --- END OF NEW STYLES --- */
+
     </style>
 </head>
 <body>
@@ -53,7 +95,7 @@
                     <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to All Skills</a>
                 </div>
 
-                <div class="projects-grid">
+                <div class="projects-grid ai-project-grid">
                     <div class="project-card">
                         <img src="https://placehold.co/600x400/0a0a10/00aaff?text=AI+Art+Generator" alt="AI Art Generator" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0a0a10/FFFFFF?text=Image+Not+Found';">
                         <div class="project-content">
