@@ -25,43 +25,44 @@
             color: var(--accent-color);
         }
 
-        /* --- NEW GOOGLE AI-STYLE HOVER EFFECT --- */
+        /* --- FINAL CORRECTED BORDER ANIMATION --- */
         .ai-project-grid .project-card {
             position: relative;
-            background: var(--glass-bg); /* Use the standard background */
-            padding: 2px; /* This creates space for the border effect */
+            z-index: 1; /* Establish stacking context */
         }
 
+        /* This is the animated gradient layer */
         .ai-project-grid .project-card::before {
             content: '';
             position: absolute;
             top: 0; left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(115deg, #4285F4, #34A853, #FBBC05, #EA4335);
+            background: linear-gradient(115deg, #34A853, #FBBC05, #EA4335, #4285F4, #34A853);
             background-size: 200% 200%;
-            border-radius: 15px; /* Match the card's border-radius */
-            z-index: -2; /* Place it behind the inner content */
+            border-radius: 15px; /* Must match the card's border-radius */
+            z-index: -2; /* Sits behind everything */
             opacity: 0;
             transition: opacity 0.4s ease-in-out;
-            animation: move-gradient 4s linear infinite;
+            animation: move-gradient 3s linear infinite;
         }
 
-        /* The inner-content keeps the original glass background */
-        .card-inner {
-            background: var(--glass-bg);
-            border-radius: 13px; /* Slightly smaller to let the border show */
-            height: 100%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
+        /* This layer masks the gradient, creating the border effect */
+        .ai-project-grid .project-card::after {
+            content: '';
+            position: absolute;
+            top: 2px; left: 2px;
+            width: calc(100% - 4px);
+            height: calc(100% - 4px);
+            background: var(--glass-bg); /* Use the card's original background color */
+            border-radius: 13px; /* Slightly smaller radius for the inside */
+            z-index: -1; /* Sits on top of the gradient, but behind the content */
         }
 
         .ai-project-grid .project-card:hover::before {
             opacity: 1;
         }
 
-        /* This makes the gradient slide around */
         @keyframes move-gradient {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -100,39 +101,35 @@
 
                 <div class="projects-grid ai-project-grid">
                     <div class="project-card">
-                        <div class="card-inner">
-                            <img src="https://placehold.co/600x400/0a0a10/00aaff?text=AI+Art+Generator" alt="AI Art Generator" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0a0a10/FFFFFF?text=Image+Not+Found';">
-                            <div class="project-content">
-                                <h3>Generative Art Platform</h3>
-                                <p>A web application that uses generative adversarial networks (GANs) to create unique, abstract art based on user text prompts.</p>
-                                <div class="project-tags">
-                                    <span>Python</span>
-                                    <span>TensorFlow</span>
-                                    <span>Flask</span>
-                                    <span>Generative AI</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="#" class="link-btn" target="_blank"><i class="fas fa-globe"></i> Live Demo</a>
-                                    <a href="#" class="link-btn" target="_blank"><i class="fab fa-github"></i> View Code</a>
-                                </div>
+                        <img src="https://placehold.co/600x400/0a0a10/00aaff?text=AI+Art+Generator" alt="AI Art Generator" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0a0a10/FFFFFF?text=Image+Not+Found';">
+                        <div class="project-content">
+                            <h3>Generative Art Platform</h3>
+                            <p>A web application that uses generative adversarial networks (GANs) to create unique, abstract art based on user text prompts.</p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>TensorFlow</span>
+                                <span>Flask</span>
+                                <span>Generative AI</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="link-btn" target="_blank"><i class="fas fa-globe"></i> Live Demo</a>
+                                <a href="#" class="link-btn" target="_blank"><i class="fab fa-github"></i> View Code</a>
                             </div>
                         </div>
                     </div>
                      <div class="project-card">
-                        <div class="card-inner">
-                            <img src="https://placehold.co/600x400/0a0a10/00aaff?text=Chatbot+API" alt="Chatbot API" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0a0a10/FFFFFF?text=Image+Not+Found';">
-                            <div class="project-content">
-                                <h3>Customer Service Chatbot</h3>
-                                <p>An intelligent chatbot built with a large language model (LLM) to handle customer support queries with natural language understanding.</p>
-                                <div class="project-tags">
-                                    <span>OpenAI API</span>
-                                    <span>Node.js</span>
-                                    <span>React</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="#" class="link-btn" target="_blank"><i class="fas fa-globe"></i> Live Demo</a>
-                                    <a href="#" class="link-btn" target="_blank"><i class="fab fa-github"></i> View Code</a>
-                                </div>
+                        <img src="https://placehold.co/600x400/0a0a10/00aaff?text=Chatbot+API" alt="Chatbot API" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0a0a10/FFFFFF?text=Image+Not+Found';">
+                        <div class="project-content">
+                            <h3>Customer Service Chatbot</h3>
+                            <p>An intelligent chatbot built with a large language model (LLM) to handle customer support queries with natural language understanding.</p>
+                            <div class="project-tags">
+                                <span>OpenAI API</span>
+                                <span>Node.js</span>
+                                <span>React</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="link-btn" target="_blank"><i class="fas fa-globe"></i> Live Demo</a>
+                                <a href="#" class="link-btn" target="_blank"><i class="fab fa-github"></i> View Code</a>
                             </div>
                         </div>
                     </div>
