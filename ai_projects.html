@@ -24,42 +24,6 @@
         .page-header .back-link:hover {
             color: var(--accent-color);
         }
-
-        /* --- FINAL BORDER-ONLY ANIMATION --- */
-        .ai-project-grid .project-card {
-            position: relative;
-            background: var(--glass-bg); /* The card's main background */
-            background-clip: padding-box; /* Crucial: The background will not go under the border */
-            border: 2px solid transparent; /* A transparent border to let the gradient show through */
-            border-radius: 15px;
-        }
-
-        /* This is the animated gradient layer placed behind the card */
-        .ai-project-grid .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            z-index: -1;
-            margin: -2px; /* Make it slightly larger than the card to fill the border area */
-            border-radius: inherit; /* Inherit the card's border radius */
-            background: linear-gradient(115deg, #34A853, #FBBC05, #EA4335, #4285F4, #34A853);
-            background-size: 200% 200%;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            animation: move-gradient 3s linear infinite;
-        }
-
-        .ai-project-grid .project-card:hover::before {
-            opacity: 1;
-        }
-
-        @keyframes move-gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        /* --- END OF NEW STYLES --- */
-
     </style>
 </head>
 <body>
@@ -89,7 +53,7 @@
                     <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to All Skills</a>
                 </div>
 
-                <div class="projects-grid ai-project-grid">
+                <div class="projects-grid">
                     <div class="project-card">
                         <img src="https://placehold.co/600x400/0a0a10/00aaff?text=AI+Art+Generator" alt="AI Art Generator" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0a0a10/FFFFFF?text=Image+Not+Found';">
                         <div class="project-content">
