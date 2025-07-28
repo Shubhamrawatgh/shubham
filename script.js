@@ -8,6 +8,16 @@ document.addEventListener('DOMContentLoaded', () => {
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('is-active');
         });
+
+        // Close menu when a link is clicked
+        const navLinks = navMenu.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navMenu.classList.contains('is-active')) {
+                    navMenu.classList.remove('is-active');
+                }
+            });
+        });
     }
 
     // ==== THEME SWITCHER ====
