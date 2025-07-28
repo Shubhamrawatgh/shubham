@@ -117,20 +117,10 @@ a:hover {
 
 .nav-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 100%;
-}
-
-.nav-left-placeholder, .nav-right {
-    flex: 1 0 0;
-}
-
-.nav-right {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 1.5rem;
+    position: relative;
 }
 
 .nav-menu {
@@ -139,6 +129,15 @@ a:hover {
     align-items: center;
     gap: 2.5rem;
 }
+
+.nav-right {
+    position: absolute;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
 
 .nav-link {
     color: var(--primary-text-color);
@@ -637,14 +636,6 @@ footer p {
     .nav-toggle {
         display: block;
         z-index: 1001;
-    }
-    
-    .nav-left-placeholder {
-        display: none;
-    }
-
-    .nav-container {
-        justify-content: flex-end;
     }
 
     .nav-menu {
