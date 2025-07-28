@@ -31,7 +31,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--nav-height); 
-    overflow-y: scroll; /* Prevents layout shift when scrollbar appears */
+    overflow-y: scroll; /* Prevents layout shift */
 }
 
 body {
@@ -122,20 +122,20 @@ a:hover {
     height: 100%;
 }
 
-.nav-logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-text-color);
+.nav-left-placeholder, .nav-right {
+    flex: 1 0 0;
 }
 
 .nav-right {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    gap: 2.5rem;
+    gap: 1.5rem;
 }
 
 .nav-menu {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 2.5rem;
 }
@@ -638,13 +638,17 @@ footer p {
         display: block;
         z-index: 1001;
     }
+    
+    .nav-left-placeholder {
+        display: none;
+    }
 
-    .nav-right {
-        gap: 1.5rem;
+    .nav-container {
+        justify-content: flex-end;
     }
 
     .nav-menu {
-        display: none; /* Hide desktop menu */
+        display: none;
     }
 
     .nav-menu.is-active {
