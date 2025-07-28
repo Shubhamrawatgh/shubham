@@ -33,7 +33,8 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    /* Updated font stack */
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     background-color: var(--bg-color);
     color: var(--primary-text-color);
     line-height: 1.6;
@@ -62,6 +63,7 @@ h1, h2, h3 {
 }
 
 h2 {
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 2rem;
@@ -186,19 +188,45 @@ a:hover {
 
 /* ==== HEADER / HERO SECTION ==== */
 .hero {
-    min-height: 100vh; /* Changed to 100vh to better fill the screen */
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
+/* Updated h1 styles */
 .hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 0.5rem;
+    font-family: 'Montserrat', sans-serif; /* New professional font */
+    font-size: 4.5rem; /* Adjusted size */
+    font-weight: 900; /* Bolder for impact */
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    /* Gradient for dark mode */
     background: var(--hero-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+/* Style for the "Hi, I'm" part */
+.h1-intro {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: none;
+    color: var(--secondary-text-color);
+     /* Remove gradient from this part */
+    background: none;
+    margin-bottom: 0.5rem;
+}
+
+/* H1 style for LIGHT MODE */
+[data-theme="light"] .hero-content h1 {
+    background: none; /* Remove gradient */
+    -webkit-background-clip: initial; /* Reset clipping */
+    -webkit-text-fill-color: initial; /* Reset fill color */
+    color: #000000; /* Set to absolute black */
 }
 
 .hero .subtitle {
@@ -207,8 +235,13 @@ a:hover {
     font-weight: 300;
 }
 
+#typed-text {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
 .hero .subtitle strong {
-    font-weight: 900;
+    font-weight: 500;
     color: var(--primary-text-color);
 }
 
@@ -254,6 +287,7 @@ a:hover {
 }
 
 .skill-tile h3 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
@@ -336,6 +370,7 @@ a:hover {
 .projects-page-header h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .back-to-home {
@@ -405,6 +440,7 @@ a:hover {
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
     color: var(--primary-text-color);
+    font-family: 'Montserrat', sans-serif;
 }
 
 .project-content p {
@@ -565,13 +601,45 @@ footer p {
     color: var(--secondary-text-color);
 }
 
+/* ==== SCROLL TO TOP BUTTON ==== */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--accent-glow);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #0088cc;
+    transform: scale(1.1);
+}
+
+
 /* ==== RESPONSIVE DESIGN ==== */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2.8rem;
+    .hero-content h1 {
+        font-size: 3rem;
+        line-height: 1.2;
+    }
+    .h1-intro {
+        font-size: 1.2rem;
     }
     .hero .subtitle {
         font-size: 1.2rem;
+        padding: 0 1rem;
     }
     h2 {
         font-size: 2rem;
@@ -594,62 +662,8 @@ footer p {
         font-size: 0.9rem;
         padding: 0.25rem;
     }
-}
-/* ==== HERO SECTION MOBILE RESPONSIVENESS ==== */
-@media screen and (max-width: 768px) {
-    .hero-content h1 {
-        /* Reduces font size to prevent awkward wrapping on small screens */
-        font-size: 3.2rem;
-        /* Adjusts line height for better spacing between lines */
-        line-height: 1.2;
-        /* Adds space below the main heading */
-        margin-bottom: 1rem;
-    }
-
-    .hero .subtitle {
-        /* Reduces font size for the subtitle to fit better */
-        font-size: 1.3rem;
-        /* Improves readability of the subtitle */
-        line-height: 1.5;
-        /* Adds horizontal padding to prevent text from touching screen edges */
-        padding: 0 1rem;
-    }
-
-    .hero-content {
-        padding: 1rem 1rem;
-        text-align: center;
-    }
-
     #typed-text {
         display: inline-block;
-        font-weight: 700;
         word-break: break-word;
     }
-}
-/* ==== SCROLL TO TOP BUTTON ==== */
-#scrollToTopBtn {
-    display: none; /* Initially hidden, JS will manage this */
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 1000;
-    width: 45px;   /* Set a fixed width */
-    height: 45px;  /* Set a fixed height */
-    font-size: 1.2rem; /* Control icon size */
-    background: var(--accent-color);
-    color: #fff;
-    border: none;
-    border-radius: 50%; /* Make it a circle */
-    cursor: pointer;
-    box-shadow: 0 0 10px var(--accent-glow);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    /* Flexbox to perfectly center the icon */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#scrollToTopBtn:hover {
-    background-color: #0088cc;
-    transform: scale(1.1);
 }
