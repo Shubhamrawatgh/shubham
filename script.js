@@ -190,11 +190,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollBtn = document.getElementById("scrollToTopBtn");
     // Only run if the scroll-to-top button exists
     if (scrollBtn) {
+        // Hide the button initially since display:flex is now in the CSS
+        scrollBtn.style.display = "none";
+
         window.addEventListener("scroll", () => {
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                scrollBtn.style.display = "block";
+                scrollBtn.style.display = "flex"; // Use flex to show it
             } else {
-                scrollBtn.style.display = "none";
+                scrollBtn.style.display = "none"; // Hide it again
             }
         });
 
