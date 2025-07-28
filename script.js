@@ -1,8 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // ==== MOBILE NAVIGATION TOGGLE ====
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('is-active');
+        });
+    }
+
     // ==== THEME SWITCHER ====
     const themeToggle = document.getElementById('theme-toggle');
-    // Only run if the theme toggle button exists
     if (themeToggle) {
         const currentTheme = localStorage.getItem('theme');
 
@@ -36,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ==== PARTICLE BACKGROUND ANIMATION ====
     const canvas = document.getElementById('particle-canvas');
-    // Only run if the canvas exists
     if (canvas) {
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
@@ -127,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ✨ ==== TYPED.JS INITIALIZATION ====
     const typedTextSpan = document.getElementById('typed-text');
-    // Only run if the typed-text element exists AND the Typed library is loaded
     if (typedTextSpan && typeof Typed !== 'undefined') {
         new Typed('#typed-text', {
             strings: ['Full Stack Developer', 'Creative Professional', 'AI Enthusiast'],
@@ -160,7 +167,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ==== CONTACT FORM VALIDATION ====
     const contactForm = document.getElementById('contact-form');
-    // Only run if the contact form exists
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -188,16 +194,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ==== SCROLL TO TOP BUTTON ====
     const scrollBtn = document.getElementById("scrollToTopBtn");
-    // Only run if the scroll-to-top button exists
     if (scrollBtn) {
-        // Hide the button initially since display:flex is now in the CSS
         scrollBtn.style.display = "none";
 
         window.addEventListener("scroll", () => {
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                scrollBtn.style.display = "flex"; // Use flex to show it
+                scrollBtn.style.display = "flex";
             } else {
-                scrollBtn.style.display = "none"; // Hide it again
+                scrollBtn.style.display = "none";
             }
         });
 
