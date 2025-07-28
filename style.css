@@ -628,23 +628,28 @@ footer p {
 }
 /* ==== SCROLL TO TOP BUTTON ==== */
 #scrollToTopBtn {
-    display: none;
+    display: none; /* Initially hidden, JS will manage this */
     position: fixed;
     bottom: 30px;
     right: 30px;
     z-index: 1000;
-    font-size: 1.5rem;
-    padding: 0.6rem 1rem;
+    width: 45px;   /* Set a fixed width */
+    height: 45px;  /* Set a fixed height */
+    font-size: 1.2rem; /* Control icon size */
     background: var(--accent-color);
     color: #fff;
     border: none;
-    border-radius: 50%;
+    border-radius: 50%; /* Make it a circle */
     cursor: pointer;
     box-shadow: 0 0 10px var(--accent-glow);
     transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Flexbox to perfectly center the icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 #scrollToTopBtn:hover {
     background-color: #0088cc;
     transform: scale(1.1);
 }
-
