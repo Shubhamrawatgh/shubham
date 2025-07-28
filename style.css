@@ -595,3 +595,34 @@ footer p {
         padding: 0.25rem;
     }
 }
+/* ==== HERO SECTION MOBILE RESPONSIVENESS ==== */
+@media screen and (max-width: 768px) {
+    .hero-content h1 {
+        /* Reduces font size to prevent awkward wrapping on small screens */
+        font-size: 3.2rem;
+        /* Adjusts line height for better spacing between lines */
+        line-height: 1.2;
+        /* Adds space below the main heading */
+        margin-bottom: 1rem;
+    }
+
+    .hero .subtitle {
+        /* Reduces font size for the subtitle to fit better */
+        font-size: 1.3rem;
+        /* Improves readability of the subtitle */
+        line-height: 1.5;
+        /* Adds horizontal padding to prevent text from touching screen edges */
+        padding: 0 1rem;
+    }
+
+    .hero-content {
+        padding: 1rem 1rem;
+        text-align: center;
+    }
+
+    #typed-text {
+        display: inline-block;
+        font-weight: 700;
+        word-break: break-word;
+    }
+}
