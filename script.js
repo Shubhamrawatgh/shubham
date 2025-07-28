@@ -2,37 +2,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ==== THEME SWITCHER ====
     const themeToggle = document.getElementById('theme-toggle');
-    const currentTheme = localStorage.getItem('theme');
+    // Only run if the theme toggle button exists
+    if (themeToggle) {
+        const currentTheme = localStorage.getItem('theme');
 
-    function setIconForTheme(theme) {
-        if (theme === 'light') {
-            themeToggle.classList.remove('fa-moon');
-            themeToggle.classList.add('fa-sun');
-            document.documentElement.setAttribute('data-theme', 'light');
-        } else {
-            themeToggle.classList.remove('fa-sun');
-            themeToggle.classList.add('fa-moon');
-            document.documentElement.setAttribute('data-theme', 'dark');
+        function setIconForTheme(theme) {
+            if (theme === 'light') {
+                themeToggle.classList.remove('fa-moon');
+                themeToggle.classList.add('fa-sun');
+                document.documentElement.setAttribute('data-theme', 'light');
+            } else {
+                themeToggle.classList.remove('fa-sun');
+                themeToggle.classList.add('fa-moon');
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
         }
-    }
 
-    if (currentTheme) {
-        setIconForTheme(currentTheme);
-    } else {
-        setIconForTheme('dark');
-    }
+        if (currentTheme) {
+            setIconForTheme(currentTheme);
+        } else {
+            setIconForTheme('dark');
+        }
 
-    themeToggle.addEventListener('click', () => {
-        let currentTheme = document.documentElement.getAttribute('data-theme');
-        let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        setIconForTheme(newTheme);
-    });
+        themeToggle.addEventListener('click', () => {
+            let currentTheme = document.documentElement.getAttribute('data-theme');
+            let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            setIconForTheme(newTheme);
+        });
+    }
 
 
     // ==== PARTICLE BACKGROUND ANIMATION ====
     const canvas = document.getElementById('particle-canvas');
+    // Only run if the canvas exists
     if (canvas) {
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
@@ -123,7 +127,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ✨ ==== TYPED.JS INITIALIZATION ====
     const typedTextSpan = document.getElementById('typed-text');
-    if (typedTextSpan) {
+    // Only run if the typed-text element exists AND the Typed library is loaded
+    if (typedTextSpan && typeof Typed !== 'undefined') {
         new Typed('#typed-text', {
             strings: ['Full Stack Developer', 'Creative Professional', 'AI Enthusiast'],
             typeSpeed: 40,
@@ -155,6 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ==== CONTACT FORM VALIDATION ====
     const contactForm = document.getElementById('contact-form');
+    // Only run if the contact form exists
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -182,20 +188,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ==== SCROLL TO TOP BUTTON ====
     const scrollBtn = document.getElementById("scrollToTopBtn");
-
-    window.addEventListener("scroll", () => {
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            scrollBtn.style.display = "block";
-        } else {
-            scrollBtn.style.display = "none";
-        }
-    });
-
-    scrollBtn.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
+    // Only run if the scroll-to-top button exists
+    if (scrollBtn) {
+        window.addEventListener("scroll", () => {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollBtn.style.display = "block";
+            } else {
+                scrollBtn.style.display = "none";
+            }
         });
-    });
+
+        scrollBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    }
 
 });
