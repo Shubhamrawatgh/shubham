@@ -534,6 +534,25 @@ footer {
     border-top: 1px solid var(--glass-border);
 }
 
+.footer-links {
+    margin-bottom: 1rem;
+}
+
+.footer-link {
+    color: var(--secondary-text-color);
+    margin: 0 0.75rem;
+    font-weight: 500;
+}
+
+.footer-link.small-link {
+    font-size: 0.8rem; /* Makes only this link smaller */
+    font-weight: 400;
+}
+
+.footer-link:hover {
+    color: var(--accent-color);
+}
+
 .social-links a {
     font-size: 1.8rem;
     margin: 0 1rem;
