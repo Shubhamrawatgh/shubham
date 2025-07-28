@@ -3,112 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shubham Rawat - Portfolio</title>
-    
-    <!-- Stylesheets -->
+    <title>Shubham Rawat</title>
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16x16.png">
-    <link rel="manifest" href="Favicon/site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <style>
+        .hero-content h1 {
+            font-size: 5rem; /* Bigger */
+            font-weight: 700; /* Bolder */
+            color: #00aaff; /* Colored */
+        }
 
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        .hero .subtitle {
+            font-size: 2rem; /* Bigger */
+            font-weight: 500; /* Bolder */
+        }
+
+        #typed-text {
+            color: #00aaff; /* Colored */
+            font-weight: 900; /* Bolder */
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav container">
-            <div class="logo">
-                <a href="index.html">Shubham</a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li class="dropdown">
-                    <a href="#" class="nav-link">Projects <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="ai_projects.html">AI/ML Projects</a></li>
-                        <li><a href="development_projects.html">Development</a></li>
-                        <li><a href="creative_projects.html">Creative Works</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="nav-right">
-                <button id="theme-toggle"><i class="fas fa-moon"></i></button>
-                <div class="nav-toggle"><i class="fas fa-bars"></i></div>
-            </div>
-        </nav>
-    </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Shubham Rawat</h1>
-                <p class="subtitle">AI Enthusiast | Developer | Creative</p>
-                <div class="social-links">
-                    <a href="https://github.com/shubhamrawatgh" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/shubhamrawatgh/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://huggingface.co/shubhamrawat" target="_blank" aria-label="Hugging Face"><img src="assets/icons/huggingfacebw.svg" alt="Hugging Face"></a>
-                    <a href="https://www.instagram.com/shubhamrawat.art/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </section>
+   <nav class="main-nav">
+    <div class="nav-container container">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">My Skills</a>
+        <a href="#projects" class="nav-link">My Work</a>
+        <a href="https://www.youtube.com/channel/UCivew3LK7mWwoZgtVZ1DcsA" class="nav-link" target="_blank" rel="noopener noreferrer">YouTube <i class="fas fa-arrow-up-right-from-square"></i></a>
+        <a href="https://drive.google.com/uc?export=download&id=1_kqy5GRMojP7V4anfhcSK_hMSxnn8fb2" class="nav-link" download>Get Resume</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <div class="theme-switch-wrapper">
+            <i class="fas fa-moon" id="theme-toggle"></i>
+        </div>
+    </div>
+</nav>
 
-        <!-- Featured Projects Section -->
-        <section id="projects" class="section container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="project-grid">
-                <!-- Project Card 1 -->
-                <div class="project-card">
-                    <img class="project-card-img" src="https://placehold.co/600x400/007bff/white?text=AI+Project" alt="Project 1">
-                    <div class="project-content">
-                        <h3>Generative AI Model</h3>
-                        <p>A deep learning model that generates novel images based on text descriptions. Built with PyTorch and Transformers.</p>
-                        <div class="project-links">
-                            <a href="ai_projects.html" class="btn">View Details</a>
-                            <a href="https://github.com/shubhamrawatgh" target="_blank">GitHub</a>
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="container">
+        <header id="home" class="hero">
+            <div class="hero-content fade-in-section">
+                <h1>Hi, I'm Shubham Rawat</h1>
+                <p class="subtitle"><strong>A passionate</strong> <span id="typed-text"></span></p>
+            </div>
+        </header>
+
+        <main>
+            <section id="skills" class="skills-section fade-in-section">
+                <h2>My Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-tile">
+                        <i class="fas fa-code"></i>
+                        <h3>Full Stack Development</h3>
+                        <p>Building responsive, scalable, and efficient web applications from front-end to back-end with modern technologies.</p>
+                        <div class="tech-icons">
+                            <img src="assets/icons/html.svg" alt="HTML5 Logo" class="tech-logo" title="HTML5">
+                            <img src="assets/icons/css.svg" alt="CSS3 Logo" class="tech-logo" title="CSS3">
+                            <img src="assets/icons/javascript.svg" alt="JavaScript Logo" class="tech-logo" title="JavaScript">
+                            <img src="assets/icons/python.svg" alt="Python Logo" class="tech-logo" title="Python">
+                        </div>
+                        <div class="project-link-wrapper">
+                            <a href="development_projects.html" class="skill-project-btn">View Projects</a>
+                        </div>
+                    </div>
+
+                    <div class="skill-tile">
+                        <i class="fas fa-palette"></i>
+                        <h3>Creative Media & Design</h3>
+                        <p>Creating stunning visuals, from professional video editing and motion graphics to modern UI/UX design.</p>
+                        <div class="tech-icons">
+                            <img src="assets/icons/premierepro.svg" alt="Premiere Pro Logo" class="tech-logo" title="Adobe Premiere Pro">
+                            <img src="assets/icons/aftereffects.svg" alt="After Effects Logo" class="tech-logo" title="Adobe After Effects">
+                            <img src="assets/icons/photoshop.svg" alt="Photoshop Logo" class="tech-logo" title="Adobe Photoshop">
+                        </div>
+                         <div class="project-link-wrapper">
+                            <a href="creative_projects.html" class="skill-project-btn">View Projects</a>
+                        </div>
+                    </div>
+
+                    <div class="skill-tile">
+                        <i class="fas fa-brain"></i>
+                        <h3>AI & Generative Content</h3>
+                        <p>Leveraging cutting-edge AI for application development, automation, and producing stunning generative art and media.</p>
+                        <div class="tech-icons">
+                            <img src="assets/icons/chatgpt.svg" alt="OpenAI Logo" class="tech-logo" title="OpenAI">
+                            <img src="assets/icons/gemini.svg" alt="Google Gemini Logo" class="tech-logo" title="Google Gemini">
+                            <img src="assets/icons/Huggingface.svg" alt="Hugging Face Logo" class="tech-logo" title="Hugging Face">
+                        </div>
+                         <div class="project-link-wrapper">
+                            <a href="ai_projects.html" class="skill-project-btn">View Projects</a>
                         </div>
                     </div>
                 </div>
-                <!-- Project Card 2 -->
-                <div class="project-card">
-                    <img class="project-card-img" src="https://placehold.co/600x400/28a745/white?text=Web+App" alt="Project 2">
-                    <div class="project-content">
-                        <h3>Portfolio Website</h3>
-                        <p>This very website! A fully responsive personal portfolio built with HTML, CSS, and JavaScript, featuring a dark mode toggle.</p>
-                        <div class="project-links">
-                            <a href="development_projects.html" class="btn">View Details</a>
-                            <a href="https://github.com/shubhamrawatgh/shubham" target="_blank">GitHub</a>
+            </section>
+
+            <section id="projects" class="projects-section fade-in-section">
+                <h2>My Work</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="https://placehold.co/600x400/0a0a10/00aaff?text=Project+Thumbnail" alt="Project 1 Thumbnail" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0a0a10/FFFFFF?text=Image+Not+Found';">
+                        <div class="project-content">
+                            <h3>E-Commerce Platform</h3>
+                            <p>A full-featured e-commerce site built with the MERN stack, including payment gateway integration and an admin dashboard.</p>
+                            <div class="project-tags">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="link-btn" target="_blank"><i class="fas fa-globe"></i> Live Demo</a>
+                                <a href="#" class="link-btn" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://placehold.co/600x400/0a0a10/00aaff?text=Creative+Work" alt="Project 2 Thumbnail" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0a0a10/FFFFFF?text=Image+Not+Found';">
+                        <div class="project-content">
+                            <h3>Promotional Video</h3>
+                            <p>A dynamic promotional video edited in Premiere Pro with motion graphics created in After Effects to highlight a product launch.</p>
+                            <div class="project-tags">
+                                <span>Premiere Pro</span>
+                                <span>After Effects</span>
+                                <span>Video Editing</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="link-btn" target="_blank"><i class="fab fa-youtube"></i> Watch Video</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Project Card 3 -->
-                <div class="project-card">
-                    <img class="project-card-img" src="https://placehold.co/600x400/dc3545/white?text=Creative+Work" alt="Project 3">
-                    <div class="project-content">
-                        <h3>"Cyber City" Digital Art</h3>
-                        <p>A piece of digital concept art created using Adobe Photoshop and a Wacom tablet, exploring a futuristic, neon-lit theme.</p>
-                        <div class="project-links">
-                            <a href="creative_projects.html" class="btn">View Details</a>
-                            <a href="https://www.instagram.com/shubhamrawat.art/" target="_blank">Instagram</a>
-                        </div>
+            </section>
+
+            <section id="contact" class="contact-section fade-in-section">
+                <h2>Get In Touch</h2>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </section>
+        </main>
+
+        <footer class="fade-in-section">
+            <div class="footer-links">
+                <a href="about.html" class="footer-link small-link">About</a>
             </div>
-        </section>
-    </main>
+            <div class="social-links">
+                <a href="https://www.instagram.com/shubhamrawat.ai/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UCivew3LK7mWwoZgtVZ1DcsA" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                <a href="https://x.com/shubhamrawatyt" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://github.com/Shubhamrawatgh" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/shubham-rawat-593a81366/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://huggingface.co/shubhamrawat" aria-label="Hugging Face" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/icons/huggingfacebw.svg" alt="Hugging Face" class="social-icon-svg">
+                </a>
+            </div>
+            <p>© 2025 Shubham Rawat. All Rights Reserved.</p>
+        </footer>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Shubham Rawat. All Rights Reserved.</p>
-    </footer>
-
-    <!-- Scripts -->
     <script src="script.js"></script>
+    <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 </body>
 </html>
