@@ -1,28 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==== THEME SWITCHER ====
-    const themeSwitch = document.querySelector('#checkbox');
+    const themeToggle = document.getElementById('theme-toggle');
     const currentTheme = localStorage.getItem('theme');
 
-    if (currentTheme) {
-        document.documentElement.setAttribute('data-theme', currentTheme);
-
-        if (currentTheme === 'light') {
-            themeSwitch.checked = true;
-        }
-    }
-
-    function switchTheme(e) {
-        if (e.target.checked) {
+    function setIconForTheme(theme) {
+        if (theme === 'light') {
+            themeToggle.classList.remove('fa-moon');
+            themeToggle.classList.add('fa-sun');
             document.documentElement.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
         } else {
+            themeToggle.classList.remove('fa-sun');
+            themeToggle.classList.add('fa-moon');
             document.documentElement.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
         }
     }
 
-    themeSwitch.addEventListener('change', switchTheme, false);
+    if (currentTheme) {
+        setIconForTheme(currentTheme);
+    } else {
+        // Default to dark theme
+        setIconForTheme('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        let currentTheme = document.documentElement.getAttribute('data-theme');
+        let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        setIconForTheme(newTheme);
+    });
 
 
     // ==== PARTICLE BACKGROUND ANIMATION ====
