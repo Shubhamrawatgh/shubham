@@ -207,6 +207,12 @@ a:hover {
     font-weight: 300;
 }
 
+.hero .subtitle strong {
+    font-weight: 900;
+    color: var(--primary-text-color);
+}
+
+
 /* ==== GLASSMORPHISM CARD STYLE ==== */
 .glass-tile, .skill-tile, .contact-form {
     background: var(--glass-bg);
