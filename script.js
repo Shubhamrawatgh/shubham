@@ -137,8 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typedTextSpan) {
         new Typed('#typed-text', {
             strings: ['Full Stack Developer', 'Creative Professional', 'AI Enthusiast'],
-            typeSpeed: 70,
-            backSpeed: 50,
+            typeSpeed: 40,
+            backSpeed: 30,
             backDelay: 2000,
             loop: true
         });
