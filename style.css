@@ -102,16 +102,16 @@ a:hover {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(10, 10, 16, 0.75);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    /* The backdrop-filter was removed from here for performance */
+    background: rgba(10, 10, 16, 0.9); /* Adjusted opacity for a similar feel */
     border-bottom: 1px solid var(--glass-border);
     z-index: 1000;
     height: var(--nav-height);
 }
 
 [data-theme="light"] .main-nav {
-    background: rgba(240, 242, 245, 0.75);
+     /* The backdrop-filter was removed from here for performance */
+    background: rgba(240, 242, 245, 0.9); /* Adjusted opacity for a similar feel */
 }
 
 
@@ -235,8 +235,7 @@ a:hover {
 /* ==== GLASSMORPHISM CARD STYLE ==== */
 .glass-tile, .skill-tile, .contact-form {
     background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    /* The backdrop-filter was removed from here for performance */
     border: 1px solid var(--glass-border);
     border-radius: 15px;
     padding: 2rem;
