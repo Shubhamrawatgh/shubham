@@ -102,16 +102,14 @@ a:hover {
     top: 0;
     left: 0;
     width: 100%;
-    /* The backdrop-filter was removed from here for performance */
-    background: rgba(10, 10, 16, 0.9); /* Adjusted opacity for a similar feel */
+    background: rgba(10, 10, 16, 0.9);
     border-bottom: 1px solid var(--glass-border);
     z-index: 1000;
     height: var(--nav-height);
 }
 
 [data-theme="light"] .main-nav {
-     /* The backdrop-filter was removed from here for performance */
-    background: rgba(240, 242, 245, 0.9); /* Adjusted opacity for a similar feel */
+    background: rgba(240, 242, 245, 0.9);
 }
 
 
@@ -235,7 +233,6 @@ a:hover {
 /* ==== GLASSMORPHISM CARD STYLE ==== */
 .glass-tile, .skill-tile, .contact-form {
     background: var(--glass-bg);
-    /* The backdrop-filter was removed from here for performance */
     border: 1px solid var(--glass-border);
     border-radius: 15px;
     padding: 2rem;
@@ -339,21 +336,20 @@ a:hover {
     padding: 4rem 0;
 }
 
-.projects-page-header {
+.page-header {
     text-align: center;
-    padding: 4rem 0 2rem 0;
+    margin-bottom: 3rem;
 }
 
-.projects-page-header i {
-    font-size: 3.5rem;
+.page-header .back-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+    transition: color 0.3s ease;
+}
+.page-header .back-link:hover {
     color: var(--accent-color);
-    text-shadow: 0 0 15px var(--accent-glow);
-    margin-bottom: 1.5rem;
-}
-
-.projects-page-header h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
 }
 
 .back-to-home {
@@ -405,11 +401,25 @@ a:hover {
     box-shadow: 0 0 25px var(--accent-glow);
 }
 
-.project-card img {
+.project-thumbnail-wrapper {
+    position: relative;
     width: 100%;
-    height: 200px;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+}
+
+.project-thumbnail-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    display: block;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-thumbnail-wrapper img {
+    transform: scale(1.05);
 }
 
 .project-content {
@@ -454,6 +464,7 @@ a:hover {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    margin-top: auto;
 }
 
 .link-btn {
@@ -479,6 +490,88 @@ a:hover {
 .link-btn i {
     margin-right: 0.5rem;
 }
+
+/* Styles for Video Projects */
+.video-project .project-thumbnail-wrapper {
+    cursor: pointer;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: background-color 0.3s, transform 0.3s;
+    pointer-events: none; /* Allows click to pass through to wrapper */
+}
+
+.project-card:hover .play-icon {
+    transform: translate(-50%, -50%) scale(1.1);
+    background-color: var(--accent-color);
+}
+
+/* ==== VIDEO LIGHTBOX STYLES ==== */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.is-visible {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+    width: 90%;
+    max-width: 960px;
+}
+
+#video-player {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 */
+    height: 0;
+}
+
+#video-player iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.close-lightbox:hover {
+    transform: scale(1.2);
+}
+
 
 /* ==== CONTACT SECTION ==== */
 .contact-section {
