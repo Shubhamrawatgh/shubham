@@ -24,6 +24,13 @@
         .page-header .back-link:hover {
             color: var(--accent-color);
         }
+        /* Style for the iframe to be responsive */
+        .project-card iframe {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 9 / 16; /* Portrait aspect ratio for shorts */
+            border-radius: 15px 15px 0 0;
+        }
     </style>
 </head>
 <body>
@@ -59,6 +66,21 @@
                 </div>
                 
                 <div class="projects-grid">
+                    <div class="project-card">
+                        <iframe width="363" height="646" src="https://www.youtube.com/embed/r3bW-xy7XQY" title="NOTHING EDIT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="project-content">
+                            <h3>NOTHING EDIT</h3>
+                            <p>A promotional ad concept for Nothing, edited to capture their unique design and brand aesthetic.</p>
+                            <div class="project-tags">
+                                <span>Video Editing</span>
+                                <span>Advertising</span>
+                                <span>Motion Graphics</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://www.youtube.com/embed/r3bW-xy7XQY" class="link-btn" target="_blank"><i class="fab fa-youtube"></i> Watch on YouTube</a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="project-card">
                         <img src="https://placehold.co/600x400/0a0a10/00aaff?text=Promo+Video" alt="Promotional Video" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0a0a10/FFFFFF?text=Image+Not+Found';">
                         <div class="project-content">
