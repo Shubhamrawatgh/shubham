@@ -133,3 +133,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+// ==== VIDEO LIGHTBOX ====
+    const videoProjects = document.querySelectorAll('.video-project');
+    const lightbox = document.getElementById('video-lightbox');
+    const videoPlayer = document.getElementById('video-player');
+    const closeLightbox = document.querySelector('.close-lightbox');
+
+    if (videoProjects.length > 0 && lightbox) {
+        videoProjects.forEach(project => {
+            project.addEventListener('click', () => {
+                const youtubeId = project.dataset.youtubeId;
+                if (youtubeId) {
+                    videoPlayer.innerHTML = `<iframe src="http://googleusercontent.com/youtube.com/5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                    lightbox.classList.add('is-visible');
+                }
+            });
+        });
+
+        const closeAndClear = () => {
+            lightbox.classList.remove('is-visible');
+            videoPlayer.innerHTML = ''; // Clear the iframe to stop the video
+        };
+
+        if (closeLightbox) {
+            closeLightbox.addEventListener('click', closeAndClear);
+        }
+        
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) { // Close only if clicking on the background
+                closeAndClear();
+            }
+        });
+    }
