@@ -6,32 +6,6 @@
     <title>Creative Projects - Shubham Rawat</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <style>
-        body {
-            background-color: var(--bg-color);
-        }
-        .page-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        .page-header .back-link {
-            display: inline-block;
-            margin-top: 1rem;
-            font-weight: 500;
-            color: var(--secondary-text-color);
-            transition: color 0.3s ease;
-        }
-        .page-header .back-link:hover {
-            color: var(--accent-color);
-        }
-        /* Style for the iframe to be responsive */
-        .project-card iframe {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 9 / 16; /* Portrait aspect ratio for shorts */
-            border-radius: 15px 15px 0 0;
-        }
-    </style>
 </head>
 <body>
 
@@ -66,8 +40,13 @@
                 </div>
                 
                 <div class="projects-grid">
-                    <div class="project-card">
-                        <iframe width="363" height="646" src="https://www.youtube.com/embed/r3bW-xy7XQY" title="NOTHING EDIT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="project-card video-project" data-youtube-id="mru2H36_sOA">
+                        <div class="project-thumbnail-wrapper">
+                            <img src="https://i.ytimg.com/vi/mru2H36_sOA/hqdefault.jpg" alt="NOTHING EDIT Thumbnail">
+                            <div class="play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
                         <div class="project-content">
                             <h3>NOTHING EDIT</h3>
                             <p>A promotional ad concept for Nothing, edited to capture their unique design and brand aesthetic.</p>
@@ -76,13 +55,13 @@
                                 <span>Advertising</span>
                                 <span>Motion Graphics</span>
                             </div>
-                            <div class="project-links">
-                                <a href="https://www.youtube.com/embed/r3bW-xy7XQY" class="link-btn" target="_blank"><i class="fab fa-youtube"></i> Watch on YouTube</a>
-                            </div>
                         </div>
                     </div>
+
                     <div class="project-card">
-                        <img src="https://placehold.co/600x400/0a0a10/00aaff?text=Promo+Video" alt="Promotional Video" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0a0a10/FFFFFF?text=Image+Not+Found';">
+                        <div class="project-thumbnail-wrapper">
+                            <img src="https://placehold.co/600x338/0a0a10/00aaff?text=Promo+Video" alt="Promotional Video">
+                        </div>
                         <div class="project-content">
                             <h3>Dynamic Product Promo</h3>
                             <p>A high-energy promotional video for a tech product, featuring custom motion graphics and professional editing techniques.</p>
@@ -97,7 +76,9 @@
                         </div>
                     </div>
                      <div class="project-card">
-                        <img src="https://placehold.co/600x400/0a0a10/00aaff?text=UI/UX+Design" alt="UI/UX Design" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0a0a10/FFFFFF?text=Image+Not+Found';">
+                        <div class="project-thumbnail-wrapper">
+                             <img src="https://placehold.co/600x338/0a0a10/00aaff?text=UI/UX+Design" alt="UI/UX Design">
+                        </div>
                         <div class="project-content">
                             <h3>Mobile App UI/UX</h3>
                             <p>Complete UI/UX design for a fitness tracking app, focusing on an intuitive user flow and a clean, motivating interface.</p>
@@ -128,6 +109,13 @@
             </div>
             <p>© 2025 Shubham Rawat. All Rights Reserved.</p>
         </footer>
+    </div>
+    
+    <div id="video-lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="close-lightbox"><i class="fas fa-times"></i></span>
+            <div id="video-player"></div>
+        </div>
     </div>
 
     <script src="script.js"></script>
