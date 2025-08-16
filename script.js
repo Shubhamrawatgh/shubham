@@ -113,16 +113,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ==== SCROLL TO TOP BUTTON ====
     const scrollBtn = document.getElementById("scrollToTopBtn");
-    if (scrollBtn) {
-        scrollBtn.style.display = "none";
+    const topSentinel = document.getElementById("top-sentinel");
 
-        window.addEventListener("scroll", () => {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                scrollBtn.style.display = "flex";
-            } else {
-                scrollBtn.style.display = "none";
-            }
+    if (scrollBtn && topSentinel) {
+        scrollBtn.style.display = "none"; // Initially hidden
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // If the sentinel is NOT intersecting (i.e., scrolled past the top)
+                // then show the button. Otherwise, hide it.
+                if (!entry.isIntersecting) {
+                    scrollBtn.style.display = "flex";
+                } else {
+                    scrollBtn.style.display = "none";
+                }
+            });
+        }, {
+            threshold: 0.1 // Triggers when 10% of the sentinel is visible
         });
+
+        observer.observe(topSentinel);
 
         scrollBtn.addEventListener("click", () => {
             window.scrollTo({
