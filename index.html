@@ -3,182 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shubham Rawat</title>
+    <title>Shubham Rawat | Portfolio</title>
+    <meta name="description" content="Welcome to the portfolio of Shubham Rawat, a passionate developer and creative.">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./Favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./Favicon/favicon-16x16.png">
+    <link rel="manifest" href="./Favicon/site.webmanifest">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <style>
-        .hero-content h1 {
-            font-size: 5rem; /* Bigger */
-            font-weight: 700; /* Bolder */
-            color: #00aaff; /* Colored */
-        }
 
-        .hero .subtitle {
-            font-size: 2rem; /* Bigger */
-            font-weight: 500; /* Bolder */
-        }
+    <!-- CDN Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js"></script>
 
-        #typed-text {
-            color: #00aaff; /* Colored */
-            font-weight: 900; /* Bolder */
-        }
-    </style>
 </head>
 <body>
 
-   <nav class="main-nav">
-    <div class="nav-container container">
-        <div class="nav-menu">
-            <a href="index.html#home" class="nav-link">Home</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="index.html#skills" class="nav-link">My Skills</a>
-            <a href="index.html#projects" class="nav-link">My Work</a>
-            <a href="https://www.youtube.com/channel/UCivew3LK7mWwoZgtVZ1DcsA" class="nav-link" target="_blank" rel="noopener noreferrer">YouTube <i class="fas fa-arrow-up-right-from-square"></i></a>
-            <a href="https://drive.google.com/uc?export=download&id=1_kqy5GRMojP7V4anfhcSK_hMSxnn8fb2" class="nav-link" download>Get Resume</a>
-            <a href="index.html#contact" class="nav-link">Contact</a>
-        </div>
-        <div class="nav-right">
-            <div class="theme-switch-wrapper">
-                <i class="fas fa-moon" id="theme-toggle"></i>
+    <!-- Header and Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="#">Shubham Rawat</a>
             </div>
-            <button class="nav-toggle">
+            <div class="nav-links" id="nav-links-container">
+                <a href="#hero">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="nav-toggle" id="nav-toggle-button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links-container">
                 <i class="fas fa-bars"></i>
             </button>
-        </div>
-    </div>
-</nav>
+            <span class="nav-active-underline"></span>
+        </nav>
+    </header>
 
-    <div class="container">
-        <header id="home" class="hero">
-            <div class="hero-content fade-in-section">
-                <h1>Hi, I'm Shubham Rawat</h1>
-                <p class="subtitle"><strong>A passionate</strong> <span id="typed-text"></span></p>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <canvas id="particle-canvas"></canvas>
+            <div class="hero-content">
+                <h1>Shubham Rawat</h1>
+                <p>Creative Technologist & AI Enthusiast</p>
+                <p class="role-text">I am a <span id="typed-role"></span></p>
             </div>
-        </header>
+            <div class="wave-divider">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
 
-        <main>
-            <section id="skills" class="skills-section fade-in-section">
-                <h2>My Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-tile">
-                        <i class="fas fa-code"></i>
-                        <h3>Full Stack Development</h3>
-                        <p>Building responsive, scalable, and efficient web applications from front-end to back-end with modern technologies.</p>
-                        <div class="tech-icons">
-                            <img src="assets/icons/html.svg" alt="HTML5 Logo" class="tech-logo" title="HTML5">
-                            <img src="assets/icons/css.svg" alt="CSS3 Logo" class="tech-logo" title="CSS3">
-                            <img src="assets/icons/javascript.svg" alt="JavaScript Logo" class="tech-logo" title="JavaScript">
-                            <img src="assets/icons/python.svg" alt="Python Logo" class="tech-logo" title="Python">
-                        </div>
-                        <div class="project-link-wrapper">
-                            <a href="development_projects.html" class="skill-project-btn">View Projects</a>
-                        </div>
-                    </div>
+        <!-- About Section -->
+        <section id="about" class="content-section">
+            <h2>About Me</h2>
+            <p>I am a passionate and creative individual with a strong interest in technology and design. I love exploring new ideas and bringing them to life through code and art. My journey in the world of tech has been driven by curiosity and a desire to build things that matter.</p>
+        </section>
 
-                    <div class="skill-tile">
-                        <i class="fas fa-palette"></i>
-                        <h3>Creative Media & Design</h3>
-                        <p>Creating stunning visuals, from professional video editing and motion graphics to modern UI/UX design.</p>
-                        <div class="tech-icons">
-                            <img src="assets/icons/premierepro.svg" alt="Premiere Pro Logo" class="tech-logo" title="Adobe Premiere Pro">
-                            <img src="assets/icons/aftereffects.svg" alt="After Effects Logo" class="tech-logo" title="Adobe After Effects">
-                            <img src="assets/icons/photoshop.svg" alt="Photoshop Logo" class="tech-logo" title="Adobe Photoshop">
-                        </div>
-                         <div class="project-link-wrapper">
-                            <a href="creative_projects.html" class="skill-project-btn">View Projects</a>
-                        </div>
-                    </div>
+        <!-- Skills Section -->
+        <section id="skills" class="content-section">
+            <h2>My Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                <div class="skill-card"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                <div class="skill-card"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
+                <div class="skill-card"><i class="fab fa-python"></i><span>Python</span></div>
+                <div class="skill-card"><i class="fas fa-robot"></i><span>AI/ML</span></div>
+                <div class="skill-card"><i class="fas fa-palette"></i><span>UI/UX Design</span></div>
+            </div>
+        </section>
 
-                    <div class="skill-tile">
-                        <i class="fas fa-brain"></i>
-                        <h3>AI & Generative Content</h3>
-                        <p>Leveraging cutting-edge AI for application development, automation, and producing stunning generative art and media.</p>
-                        <div class="tech-icons">
-                            <img src="assets/icons/chatgpt.svg" alt="OpenAI Logo" class="tech-logo" title="OpenAI">
-                            <img src="assets/icons/gemini.svg" alt="Google Gemini Logo" class="tech-logo" title="Google Gemini">
-                            <img src="assets/icons/Huggingface.svg" alt="Hugging Face Logo" class="tech-logo" title="Hugging Face">
-                        </div>
-                         <div class="project-link-wrapper">
-                            <a href="ai_projects.html" class="skill-project-btn">View Projects</a>
-                        </div>
-                    </div>
+        <!-- Projects Section -->
+        <section id="projects" class="content-section">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>Project One</h3>
+                    <p>A brief description of the first project, highlighting the technologies used and its purpose.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer">View Project</a>
                 </div>
-            </section>
-
-            <section id="projects" class="projects-section fade-in-section">
-                <h2>My Work</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <img src="https://placehold.co/600x400/0a0a10/00aaff?text=Project+Thumbnail" alt="Project 1 Thumbnail" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0a0a10/FFFFFF?text=Image+Not+Found';">
-                        <div class="project-content">
-                            <h3>E-Commerce Platform</h3>
-                            <p>A full-featured e-commerce site built with the MERN stack, including payment gateway integration and an admin dashboard.</p>
-                            <div class="project-tags">
-                                <span>React</span>
-                                <span>Node.js</span>
-                                <span>MongoDB</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="link-btn" target="_blank"><i class="fas fa-globe"></i> Live Demo</a>
-                                <a href="#" class="link-btn" target="_blank"><i class="fab fa-github"></i> View Code</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <img src="https://placehold.co/600x400/0a0a10/00aaff?text=Creative+Work" alt="Project 2 Thumbnail" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0a0a10/FFFFFF?text=Image+Not+Found';">
-                        <div class="project-content">
-                            <h3>Promotional Video</h3>
-                            <p>A dynamic promotional video edited in Premiere Pro with motion graphics created in After Effects to highlight a product launch.</p>
-                            <div class="project-tags">
-                                <span>Premiere Pro</span>
-                                <span>After Effects</span>
-                                <span>Video Editing</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="link-btn" target="_blank"><i class="fab fa-youtube"></i> Watch Video</a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="project-card">
+                    <h3>Project Two</h3>
+                    <p>A brief description of the second project, highlighting the technologies used and its purpose.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer">View Project</a>
                 </div>
-            </section>
+                <div class="project-card">
+                    <h3>Project Three</h3>
+                    <p>A brief description of the third project, highlighting the technologies used and its purpose.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+            </div>
+        </section>
 
-            <section id="contact" class="contact-section fade-in-section">
-                <h2>Get In Touch</h2>
-                <form id="contact-form" class="contact-form">
-                    <div class="form-group">
+        <!-- Contact Section -->
+        <section id="contact" class="content-section">
+            <h2>Get in Touch</h2>
+            <div class="contact-card">
+                <form id="contact-form">
+                    <div class="input-with-icon">
+                        <i class="fas fa-user"></i>
                         <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
-                    <div class="form-group">
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
                         <input type="email" id="email" name="email" placeholder="Your Email" required>
                     </div>
-                    <div class="form-group">
+                    <div class="input-with-icon">
+                        <i class="fas fa-pen"></i>
                         <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
                     </div>
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
-            </section>
-        </main>
-
-        <footer class="fade-in-section">
-            <div class="footer-links">
-                <a href="about.html" class="footer-link small-link">About</a>
             </div>
+            <!-- Container for dynamic toast notifications -->
+            <div id="toast-container" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="wave-divider-footer">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <div class="footer-content">
             <div class="social-links">
-                <a href="https://www.instagram.com/shubhamrawat.ai/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/channel/UCivew3LK7mWwoZgtVZ1DcsA" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-                <a href="https://x.com/shubhamrawatyt" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
-                <a href="https://github.com/Shubhamrawatgh" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/shubham-rawat-593a81366/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                <a href="https://huggingface.co/shubhamrawat" aria-label="Hugging Face" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/icons/huggingfacebw.svg" alt="Hugging Face" class="social-icon-svg">
+                <a href="https://github.com/shubhamrawatgh" target="_blank" rel="noopener noreferrer" aria-label="Visit my GitHub profile">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/shubhamrawatgh/" target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn profile">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/shubhamrawatgh" target="_blank" rel="noopener noreferrer" aria-label="Visit my Twitter profile">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://huggingface.co/shubhamrawatgh" target="_blank" rel="noopener noreferrer" aria-label="Visit my Hugging Face profile" class="huggingface-icon">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"><path d="M20.28 3.72a2.4 2.4 0 0 0-3.4 0L12 8.59l-4.88-4.87a2.4 2.4 0 0 0-3.4 3.4l4.88 4.87-4.88 4.88a2.4 2.4 0 1 0 3.4 3.4L12 15.41l4.88 4.88a2.4 2.4 0 1 0 3.4-3.4l-4.88-4.88 4.88-4.88a2.4 2.4 0 0 0 0-3.4Z"/></svg>
                 </a>
             </div>
-            <p>© 2025 Shubham Rawat. All Rights Reserved.</p>
-        </footer>
-    </div>
+            <p>&copy; 2024 Shubham Rawat. All Rights Reserved.</p>
+        </div>
+    </footer>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
-    <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 </body>
 </html>
