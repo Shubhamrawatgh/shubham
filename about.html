@@ -1,85 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Shubham Rawat</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <style>
-        /* Styles specific to the about page for now */
-        .about-section {
-            padding: 6rem 0;
-            min-height: 60vh;
-            text-align: center;
-        }
-        .about-section p {
-            max-width: 800px;
-            margin: 1rem auto;
-            color: var(--secondary-text-color);
-            font-size: 1.1rem;
-        }
-        .about-section .back-to-home {
-            margin-top: 2rem;
-        }
-    </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me - Shubham Rawat</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="assets/favicon.png"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <script src="script.js" defer></script>
 </head>
 <body>
-
-   <nav class="main-nav">
+  <nav class="main-nav">
     <div class="nav-container container">
-        <div class="nav-left-placeholder"></div>
-        <div class="nav-menu">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="index.html#skills" class="nav-link">My Skills</a>
-            <a href="index.html#projects" class="nav-link">My Work</a>
-            <a href="https://www.youtube.com/channel/UCivew3LK7mWwoZgtVZ1DcsA" class="nav-link" target="_blank" rel="noopener noreferrer">YouTube <i class="fas fa-arrow-up-right-from-square"></i></a>
-            <a href="https://drive.google.com/uc?export=download&id=1_kqy5GRMojP7V4anfhcSK_hMSxnn8fb2" class="nav-link" download>Get Resume</a>
-            <a href="index.html#contact" class="nav-link">Contact</a>
-        </div>
-        <div class="nav-right">
-            <div class="theme-switch-wrapper">
-                <i class="fas fa-moon" id="theme-toggle"></i>
-            </div>
-            <button class="nav-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
+      <div class="brand"><a href="index.html#home" class="logo">SR</a></div>
+      <div class="nav-menu">
+        <a href="index.html#home" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="index.html#skills" class="nav-link">My Skills</a>
+        <a href="index.html#projects" class="nav-link">My Work</a>
+        <a href="https://www.youtube.com/channel/UCivew3LK7mWwoZgtVZ1DcsA" class="nav-link" target="_blank" rel="noopener noreferrer">YouTube <i class="fas fa-arrow-up-right-from-square"></i></a>
+        <a href="https://drive.google.com/uc?export=download&id=1_kqy5GRMojP7V4anfhcSK_hMSxnn8fb2" class="nav-link" download>Get Resume</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-right">
+        <div class="theme-switch-wrapper"><i class="fas fa-moon" id="theme-toggle"></i></div>
+        <button class="nav-toggle"><i class="fas fa-bars"></i></button>
+      </div>
     </div>
-</nav>
+    <div class="nav-active-underline"></div>
+  </nav>
 
-    <div class="container">
-        <main>
-            <section class="about-section fade-in-section">
-                <h2>About Me</h2>
-                <p>
-                    This Page Will be Updated Soon.
-                </p>
-                
-                <a href="index.html" class="back-to-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
-
-            </section>
-        </main>
-
-        <footer class="fade-in-section">
-             <div class="footer-links">
-                <a href="about.html" class="footer-link small-link">About</a>
+  <div class="container">
+    <main>
+      <section class="about-section fade-in-section">
+        <h2>About Me</h2>
+        <div class="about-wrap glass">
+          <div class="about-left">
+            <div class="avatar-ring glow lg">
+              <img src="assets/avatar.jpg" alt="Shubham Rawat portrait" onerror="this.onerror=null;this.src='https://placehold.co/420x420/0a0a10/FFFFFF?text=Your+Avatar';">
             </div>
-            <div class="social-links">
-                <a href="https://www.instagram.com/shubhamrawat.ai/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/channel/UCivew3LK7mWwoZgtVZ1DcsA" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-                <a href="https://x.com/shubhamrawatyt" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
-                <a href="https://github.com/Shubhamrawatgh" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/shubham-rawat-593a81366/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                <a href="https://huggingface.co/shubhamrawat" aria-label="Hugging Face" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/icons/huggingfacebw.svg" alt="Hugging Face" class="social-icon-svg">
-                </a>
+          </div>
+          <div class="about-right">
+            <p>
+              I'm a full-stack developer and creative professional who loves building fast, beautiful, and accessible experiences on the web. I combine code with design and sprinkle in AI where it makes sense.
+            </p>
+            <p>
+              I enjoy shipping clean UX, performance-minded interfaces, and documenting the journey along the way.
+            </p>
+            <div class="about-quick">
+              <div><i class="fa-solid fa-location-dot"></i> India (remote-friendly)</div>
+              <div><i class="fa-regular fa-clock"></i> Freelance & collaborations open</div>
+              <div><i class="fa-solid fa-bolt"></i> Focus: React, Node, Motion, UI/UX, Gen-AI</div>
             </div>
-            <p>© 2025 Shubham Rawat. All Rights Reserved.</p>
-        </footer>
+            <a href="index.html#projects" class="btn btn-primary ripple">See My Work</a>
+          </div>
+        </div>
+        <a href="index.html" class="back-to-home ripple"><i class="fas fa-arrow-left"></i> Back to Home</a>
+      </section>
+    </main>
+  </div>
+
+  <div class="wave-divider footer-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 140" preserveAspectRatio="none"><path d="M0,64L80,58.7C160,53,320,43,480,64C640,85,800,139,960,133.3C1120,128,1280,64,1360,37.3L1440,11V140H0Z"></path></svg>
+  </div>
+  <footer class="fade-in-section">
+    <div class="social-links">
+      <a href="https://www.instagram.com/shubhamrawat.ai/" aria-label="Instagram" target="_blank" rel="noopener noreferrer" class="brand-instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/channel/UCivew3LK7mWwoZgtVZ1DcsA" aria-label="YouTube" target="_blank" rel="noopener noreferrer" class="brand-youtube"><i class="fab fa-youtube"></i></a>
+      <a href="https://x.com/shubhamrawatyt" aria-label="Twitter/X" target="_blank" rel="noopener noreferrer" class="brand-x"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://github.com/Shubhamrawatgh" aria-label="GitHub" target="_blank" rel="noopener noreferrer" class="brand-github"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/shubham-rawat-593a81366/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" class="brand-linkedin"><i class="fab fa-linkedin"></i></a>
+      <a href="https://huggingface.co/shubhamrawat" aria-label="Hugging Face" target="_blank" rel="noopener noreferrer" class="brand-hf">
+        <img src="assets/icons/huggingfacebw.svg" alt="Hugging Face" class="social-icon-svg">
+      </a>
     </div>
-
-    <script src="script.js"></script>
+    <p>© 2025 Shubham Rawat. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
