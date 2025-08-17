@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const typedTextSpan = document.getElementById('typed-text');
     if (typedTextSpan && typeof Typed !== 'undefined') {
         new Typed('#typed-text', {
-            strings: ['Full Stack Developer', 'Creative Professional', 'AI Enthusiast'],
+            strings: ['Full Stack Developer', 'Creative Professional', '<span class="ai-enthusiast-gradient">AI Enthusiast</span>'],
             typeSpeed: 40,
             backSpeed: 30,
             backDelay: 2000,
@@ -95,6 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const message = document.getElementById('message').value.trim();
 
             if (name === '' || email === '' || message === '') {
+                // Using a custom modal or message box is better than alert()
+                // For this example, we'll keep the alert.
                 alert('Please fill in all fields.');
                 return;
             }
